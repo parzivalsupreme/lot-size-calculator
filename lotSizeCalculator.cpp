@@ -6,26 +6,33 @@ int main()
 {
     double risk, openPrice, stopLossPrice, accountBalance;
     int contractSize = 1;
+    char continueTrade;
 
-    cout << "Open price: ";
-    cin >> openPrice;
+    do
+    {
+        cout << "Open price: ";
+        cin >> openPrice;
 
-    cout << "Stop loss price: ";
-    cin >> stopLossPrice;
+        cout << "Stop loss price: ";
+        cin >> stopLossPrice;
 
-    cout << "Account Balance: ";
-    cin >> accountBalance;
+        cout << "Account Balance: ";
+        cin >> accountBalance;
 
-    cout << "risk: ";
-    cin >> risk;
+        cout << "Risk (%): ";
+        cin >> risk;
 
-    double riskAmount = accountBalance * risk / 100;
+        double riskAmount = accountBalance * risk / 100;
 
-    double priceDifference = openPrice - stopLossPrice;
+        double priceDifference = openPrice - stopLossPrice;
 
-    double lotSize = riskAmount / priceDifference * contractSize;
+        double lotSize = riskAmount / priceDifference * contractSize;
 
-    cout << "Trade size: " << round(lotSize * 1000) / 1000;
+        cout << "Trade size: " << round(lotSize * 1000) / 1000 << endl;
+
+        cout << "Another trade? (y/n): ";
+        cin >> continueTrade;
+    } while (continueTrade == 'y' || continueTrade == 'Y');
 
     return 0;
 }

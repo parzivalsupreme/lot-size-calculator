@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+#include <cmath>
 
 int main()
 {
@@ -24,7 +25,7 @@ int main()
 
     double lotSize = riskAmount / priceDifference * contractSize;
 
-    cout << "Trade size: " << lotSize;
+    cout << "Trade size: " << round(lotSize * 1000) / 1000;
 
     return 0;
 }

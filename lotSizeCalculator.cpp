@@ -31,7 +31,11 @@ int main()
         cout << "Trade size: " << round(lotSize * 1000) / 1000 << endl;
 
         cout << "Another trade? (y/n): ";
+
         cin >> continueTrade;
+
+        cin.ignore(); 
+        cout << endl;
     } while (continueTrade == 'y' || continueTrade == 'Y');
 
     return 0;
